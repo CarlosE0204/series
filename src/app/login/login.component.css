@@ -1,0 +1,54 @@
+ .login-card {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #e0b3ff;
+    border-radius: 12px;
+}
+mat-card{
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #4a148c; 
+}
+
+.bienvenida {
+    font-size: 1rem;
+    color: #5e35b1; 
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+mat-form-field {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex; 
+}
+
+button {
+    width: 100%;
+    color: #ffffff; 
+    font-weight: bold;
+    padding-top: 10px;;
+}

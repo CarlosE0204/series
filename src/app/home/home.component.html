@@ -1,0 +1,50 @@
+<mat-sidenav-container class="container">
+ 
+    <mat-sidenav #sidenav mode="side" opened class="nav-sidenav">
+      <img src="icono_img.png" class="logo">
+      <mat-list class="color">
+        <a mat-list-item id="inicio"><div class="colorcito">Inicio</div></a>
+        <a mat-list-item><div class="colorcito">Perfil</div></a>
+        <a mat-list-item><div class="colorcito">Configuración</div></a>
+        <a mat-list-item href="#"><div class="colorcito">Cerrar Sesión</div></a>
+      </mat-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()" class="color">
+          <mat-icon>menu</mat-icon>
+        </button>
+        
+        <div>
+          <button mat-button [matMenuTriggerFor]="menu" class="color">Menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="boton">Configuracion</button>
+          <button mat-menu-item>Detalles</button>
+        </mat-menu>
+        </div>
+        
+        <div>
+          <button mat-button [matMenuTriggerFor]="menu2" class="color">Perfil</button>
+          <mat-menu #menu2="matMenu">
+            <button mat-menu-item>Ver Perfil</button>
+            <button mat-menu-item>Cerrar Sesion</button>
+          </mat-menu>
+        </div>
+
+        <div>
+          <button mat-button [matMenuTriggerFor]="menu3" class="color">Cerrar Sesion</button>
+        <mat-menu #menu3="matMenu">
+          <button mat-menu-item>Configuracion</button>
+          <button mat-menu-item>Detalles</button>
+        </mat-menu>
+        </div>
+      </mat-toolbar>
+  
+      <div class="content">
+        <h2>Bienvenido estimado usuario</h2>
+
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

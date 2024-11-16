@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-header>
+        <img src="login_img.png"alt="Logo" class="logo">
+    </mat-card-header>
+    <mat-card-content>
+        <form>
+            <h2 class="titulo">Inicio de Sesión</h2>
+            <p class="bienvenida">¡Hola de nuevo!</p>
+            <mat-error *ngIf="estan">Los datos ingresados no son correctos.</mat-error>
+            <div>
+                <mat-form-field appearance="outline">
+                    <input matInput type="text" placeholder="Correo electrónico" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+                <mat-error *ngIf="errorCorreo">El usuario no es correcto</mat-error>
+            </div>
+            <div>
+            <mat-form-field appearance="outline">
+                <input matInput type="password" placeholder="Contraseña" [(ngModel)]="passwd" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <mat-error *ngIf="errorContra">La contraseña no es correcta</mat-error>
+        </div>
+            <button mat-raised-button color="primary" (click)="ingresar();">Iniciar Sesión</button>
+        </form>
+    </mat-card-content>
+</mat-card>

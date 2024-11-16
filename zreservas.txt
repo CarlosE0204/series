@@ -1,0 +1,82 @@
+<mat-sidenav-container class="container">
+    <!-- Barra lateral -->
+    <mat-sidenav #sidenav mode="side" opened class="nav-sidenav">
+      <mat-nav-list>
+        <a mat-list-item href="">Inicio</a>
+        <a mat-list-item href="">Perfil</a>
+        <a mat-list-item href="">Configuración</a>
+        <a mat-list-item href="">Ayuda</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Opciones</span>
+      </mat-toolbar>
+  
+      <!-- Contenido principal -->
+      <div class="content">
+        <h2>Bienvenido estimado usuario</h2>
+  
+        <!-- <div class="cards">
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title>Ca</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>Contenido de la tarjeta 1</p>
+            </mat-card-content>
+          </mat-card>
+  
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title>Card 2</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>Contenido de la tarjeta 2</p>
+            </mat-card-content>
+          </mat-card>
+        </div> -->
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  
+  
+  
+  
+  
+  
+/*
+  .nav-sidenav {
+    
+    color: #4a148c;
+  }
+  
+  .content {
+    padding: 16px;
+    margin-left: 16px;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  
+  .card {
+    width: 300px;
+  }
+  
+  mat-toolbar {
+    margin-bottom: 20px;
+  }
+  
+  mat-card {
+    padding: 16px;
+  }
+   */
