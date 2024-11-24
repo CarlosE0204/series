@@ -1,0 +1,57 @@
+<h2 mat-dialog-title>{{data.name}}</h2>
+<mat-dialog-content>
+    <h3>Puede modificar cualquier elemento de la película, si no guarda los cambios y cierra la ventana estos cambios se perderán.</h3>
+    <form class="formulario">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Título</mat-label>
+                <input matInput type="text" value={{peli.original_title}} [(ngModel)]="peli.original_title" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <mat-error *ngIf="errorTitulo">El título no es válido</mat-error>
+            <mat-form-field appearance="outline">
+                <mat-label>Código de la película</mat-label>
+                <input matInput type="text" value={{data.pelicula._id}} readonly="true">
+            </mat-form-field>
+        </div>
+        
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Tipo de filmación</mat-label>
+                <input matInput type="text" value={{peli.contentType}} [(ngModel)]="peli.contentType" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <mat-error *ngIf="errorTipo">Datos incorrectos</mat-error>
+            <mat-form-field appearance="outline">
+                <mat-label>Año de la filmación</mat-label>
+                <input matInput type="text" value={{peli.release_date}} [(ngModel)]="peli.release_date" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <mat-error *ngIf="errorFecha">Fecha incorrecta</mat-error>
+        </div>
+        <p>Si la pelicula tiene mas de un género ingreselo separado por comas.</p>
+        <div class="row">
+            <mat-form-field appearance="outline" class="full">
+                <mat-label>Géneros</mat-label>
+                <input matInput type="text" value={{this.generos}} [(ngModel)]="this.generos" [ngModelOptions]="{standalone: true}">
+            </mat-form-field>
+            <mat-error *ngIf="errorGeneros">Datos incorrectos</mat-error>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline" class="full">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput rows="5" type="text" value={{peli.overview}} [(ngModel)]="peli.overview" [ngModelOptions]="{standalone: true}"></textarea>
+            </mat-form-field>
+            <mat-error *ngIf="errorDescripcion">Campo vacío</mat-error>
+        </div>
+        <p>Si gusta cambiar a imagen deberá colocar la URL de la nueva imagen.</p>
+        <div class="row">
+            <mat-form-field appearance="outline" class="full">
+                <mat-label>URL de imagen</mat-label>
+                <textarea matInput rows="2" type="text" value={{peli.backdrop_path}} [(ngModel)]="peli.backdrop_path" [ngModelOptions]="{standalone: true}"></textarea>
+            </mat-form-field>
+            <mat-error *ngIf="errorUrl">Campo vacío</mat-error>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="guardar()">Guardar</button>
+    <button mat-button (click)="cerrar()">Cerrar</button>
+</mat-dialog-actions>

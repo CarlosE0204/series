@@ -6,7 +6,7 @@
         <form>
             <h2 class="titulo">Inicio de Sesión</h2>
             <p class="bienvenida">¡Hola de nuevo!</p>
-            <mat-error *ngIf="estan">Usuario no encontrado.</mat-error>
+            <mat-error *ngIf="estan">Verifique sus credenciales de acceso.</mat-error>
             <div>
                 <mat-form-field appearance="outline">
                     <input matInput type="text" placeholder="Correo electrónico" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">

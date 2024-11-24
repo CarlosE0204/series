@@ -21,20 +21,17 @@ export class LoginComponent {
   errorCorreo:boolean =false;
   errorContra:boolean=false;
   estan:boolean=false;
-
   usuarios: any[]=[];
 
   constructor(private servicio:ServicioService,private router:Router){ } 
 
-   ngOnInit():void{
-     this.llenarDatos();
-   }
+    ngOnInit():void{
+      this.servicio.getUsers().subscribe(data=>{
+              this.usuarios=data;
+            })
+    }
 
-  llenarDatos(){
-     this.servicio.getUsers().subscribe(data=>{
-       this.usuarios=data;
-     })
-  }
+ 
 
   validar():boolean{
     this.errorCorreo = false;
@@ -51,15 +48,32 @@ export class LoginComponent {
     }
     return estado;
   }
+
   ingresar(){
     if(this.validar()){
       const usuarioval = this.usuarios.find((user) => user.email === this.email && user.password === this.passwd);
     if(usuarioval){
+      this.servicio.setItem('usuario',JSON.stringify(usuarioval));
       this.router.navigate(['/home']);
     }else{
       this.estan=true;
     }
-    }
+  }
+
+    // if(this.validar()){
+    //   this.servicio.login(this.email, this.passwd).subscribe({
+    //     next: (response) => {
+    //       // this.servicio.setItem('access_token', response.access_token);
+    //       // this.servicio.setItem('refresh_token', response.refresh_token);
+    //        localStorage.setItem('access_token', response.access_token);
+    //        localStorage.setItem('refresh_token', response.refresh_token);
+    //       this.router.navigate(['/home']);
+    //     },
+    //     error: (error) => {
+    //       this.estan=true;
+    //     }
+    //   });
+    // }  
   }
 }
 

@@ -1,7 +1,25 @@
 .container {
     height: 100%;
   }
+  .main{
+    padding-left: 60px; /* Añadir espacio alrededor del contenido */
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    /* width: 100%;
+    min-height: 100%; */
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    /* padding: 1rem;
+    box-sizing: inherit;
+    position: relative; */
+  }
+  mat-paginator {
+    margin-top: 20px; /* Añade margen arriba del paginador */
+  }
   .nav-sidenav {
     width: 200px;
     background-color: #deafff; 
@@ -11,6 +29,14 @@
     color: black;
     font-weight: bold;
     font-size: 20px;
+  }
+
+  #perfil{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding-top: 8px;
+    /* object-fit: cover; */
   }
 
   icon-button.color{
@@ -44,6 +70,7 @@
     margin-bottom: 10px;
     padding-left: 8px;
     padding-top: 20px;
+    border-radius: 50%;
   }
 
   mat-toolbar {
@@ -53,10 +80,45 @@
     align-items: center;
   }
 
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .botonesaccion{
+    padding-right: 20px;
+  }
+  .botonesaccion:hover{
+    cursor: pointer;
+  }
+
+  .colorcito:hover {
+    background-color: #d59bff;
+    color: #000;
+    cursor: pointer;
+  }
+
   .lista {
     margin-top: 15px;
     display: block;
     text-decoration: none;
     padding: 10px 15px; 
-    border-radius: 10px;
+  }
+  .caratula{
+    width: 60px;
+    height: 60px;
+    border-radius: 25%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    /* object-fit: cover; */
+  }
+  #hola{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding-top: 30%;
+    padding-bottom: 25%;
+    padding-right: 20px;
+    font-weight: bold;
+  }
+  button.estilo{
+    padding-right: 20px;
   }

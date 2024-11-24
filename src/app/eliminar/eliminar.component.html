@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>{{data.name}}</h2>
+<mat-dialog-content>
+    <p>¿Estas seguro que deseas eliminar la película {{data.pelicula.original_title}} ?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="aceptar()">Aceptar</button>
+    <button mat-button (click)="cerrar()">Cancelar</button>
+</mat-dialog-actions>

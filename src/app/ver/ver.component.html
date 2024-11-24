@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>{{data.name}}</h2>
+<mat-dialog-content>
+    <div class="main"><img [src]="data.pelicula.poster_path" alt="poster" class="imagen"></div>
+    <div><h3 class="linea">Titulo original: </h3><p class="linea">{{data.pelicula.original_title}} </p></div>
+    <div><h3 class="linea">Código de la película: </h3> <p class="linea">{{data.pelicula._id}} </p></div>
+    <div> <h3 class="linea">Tipo de filmacion: </h3><p class="linea">{{data.pelicula.contentType}} </p></div>
+    <div><h3 class="linea">Año de lanzamiento:</h3><p class="linea"> {{data.pelicula.release_date}} </p></div>
+    <div>
+        <h3 class="linea">Géneros:  </h3>
+        <p class="linea">
+            <span *ngFor="let genero of data.pelicula.genres; let last = last">
+                {{genero}}<span *ngIf="!last">, </span>
+            </span>
+            </p>
+    </div>
+    <div><h3 class="linea">Descripción: </h3><p class="linea">{{data.pelicula.overview}} </p></div>
+  
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="cerrar()">Cerrar</button>
+</mat-dialog-actions>
