@@ -38,6 +38,7 @@ export class EliminarComponent {
   cerrar(): void {
     this.dialogRef.close();
   }
+  
   aceptar():void{
     this.dialogRef.close(this.data.pelicula._id);
   }
